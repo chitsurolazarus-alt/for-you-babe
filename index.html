@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="theme-color" content="#ff66b5">
+  <title>For You, Bono 💗 Cinematic Love Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom cursor glow (hidden on mobile for better performance) -->
+  <div class="cursor-glow desktop-only"></div>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay">
+    <div class="loader-spinner"></div>
+    <p class="loader-text">loading our story... 💗</p>
+  </div>
+
+  <!-- INTRO SCREEN (Cinematic Entry) -->
+  <div id="intro-screen">
+    <canvas id="intro-canvas"></canvas>
+    <div class="intro-content">
+      <h1 class="intro-title">For You, <span class="glow-text">Bono</span> 💗</h1>
+      <p class="intro-subtitle">I made something for you...</p>
+      <button id="enter-btn" class="cinematic-btn">Enter</button>
+    </div>
+  </div>
+
+  <!-- Main Website Content -->
+  <main id="main-content" style="display: none;">
+    
+    <!-- Music Control -->
+    <div id="music-control" class="music-glass">
+      <i class="music-icon">🎵</i>
+      <span>Romance</span>
+      <button id="toggle-music">⏸️</button>
+    </div>
+
+    <!-- SECTION 1: Typewriter Apology -->
+    <section id="apology-section" class="section">
+      <div class="container">
+        <div class="glass-card apology-container">
+          <div id="typewriter-text" class="typewriter-display"></div>
+          <div class="cursor-blink">|</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Memory Gallery with Movement Animation -->
+    <section id="gallery-section" class="section">
+      <div class="container">
+        <h2 class="section-title">🌸 Our Beautiful Memories 🌸</h2>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Interactive Love Cards -->
+    <section id="cards-section" class="section">
+      <div class="container">
+        <h2 class="section-title">💗 Reasons I Love You 💗</h2>
+        <div class="cards-grid" id="love-cards-grid"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Secret Video Button -->
+    <section id="video-section" class="section">
+      <button id="secret-video-btn" class="cinematic-btn glow-pulse">🎬 There's something I need you to see...</button>
+    </section>
+
+    <!-- SECTION 5: Open When System -->
+    <section id="openwhen-section" class="section">
+      <div class="container">
+        <h2 class="section-title">💌 Open When... 💌</h2>
+        <div class="openwhen-grid">
+          <div class="open-card" data-mood="sad">😢 Open when you're sad</div>
+          <div class="open-card" data-mood="miss">💔 Open when you miss me</div>
+          <div class="open-card" data-mood="unloved">🌹 Open when you feel unloved</div>
+        </div>
+        <div id="open-message-display" class="open-message-glass"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Love Counter -->
+    <section id="counter-section" class="section">
+      <div class="glass-card counter-container">
+        <h3>⏳ Together for...</h3>
+        <div id="love-counter" class="counter-number">--d --h --m --s</div>
+        <p class="counter-sub">Every second with you matters 💗</p>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Mini Game -->
+    <section id="game-section" class="section">
+      <div class="glass-card game-container">
+        <h3>💖 Catch My Heart 💖</h3>
+        <p>Tap the falling pink hearts!</p>
+        <div id="game-score">Score: 0 / 10</div>
+        <canvas id="game-canvas" width="500" height="300"></canvas>
+        <div id="game-message"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Future Section -->
+    <section id="future-section" class="section">
+      <canvas id="star-canvas"></canvas>
+      <div class="future-text">
+        <p class="future-line">I don't just want moments with you...</p>
+        <p class="future-line delay-1">I want a <span class="glow-text">future</span> with you.</p>
+        <p class="future-line delay-2">✨ Forever starts now ✨</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Made with ∞ love for Bono 💗 — Lazarus</p>
+    </footer>
+  </main>
+
+  <!-- Modal for Video & Image Preview -->
+  <div id="modal" class="modal">
+    <div class="modal-content glass-card">
+      <span class="close-modal">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
