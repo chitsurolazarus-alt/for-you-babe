@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Bono · pink love · poems & healing</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #1a0b12; /* deep pink-black base */
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.8rem;
+      line-height: 1.6;
+    }
+
+    /* ===== MAIN CARD — PINK THEME ===== */
+    .love-card {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 210, 225, 0.10); /* soft pink glass */
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 4.5rem 4.5rem 3.8rem 3.8rem;
+      padding: 3rem 2.5rem 3.5rem;
+      box-shadow: 0 35px 70px rgba(180, 40, 100, 0.30), 0 0 0 2px rgba(255, 150, 200, 0.25);
+      border: 1px solid rgba(255, 180, 210, 0.30);
+      transition: all 0.25s ease;
+      animation: floatGlow 9s infinite alternate ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes floatGlow {
+      0% { box-shadow: 0 35px 70px rgba(180, 40, 100, 0.25), 0 0 0 2px rgba(255, 150, 200, 0.20); }
+      100% { box-shadow: 0 55px 90px rgba(220, 60, 130, 0.40), 0 0 0 4px rgba(255, 180, 220, 0.45); }
+    }
+
+    /* ===== ANIMATED BACKGROUND — PINK ORBS ===== */
+    .bg-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      border-radius: inherit;
+    }
+
+    .bg-canvas .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.40;
+      animation: orbMove 22s infinite alternate ease-in-out;
+    }
+
+    .bg-canvas .orb:nth-child(1) {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, #ff8cb5, #ff4d88);
+      top: -12%;
+      left: -12%;
+      animation-duration: 24s;
+    }
+
+    .bg-canvas .orb:nth-child(2) {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #ff6b9d, #e6397a);
+      bottom: -18%;
+      right: -8%;
+      animation-duration: 28s;
+      animation-delay: 2s;
+    }
+
+    .bg-canvas .orb:nth-child(3) {
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, #ff9ec4, #ff6699);
+      top: 35%;
+      left: 45%;
+      animation-duration: 20s;
+      animation-delay: 4s;
+      opacity: 0.25;
+    }
+
+    .bg-canvas .orb:nth-child(4) {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #ff80aa, #e64d88);
+      bottom: 10%;
+      left: 15%;
+      animation-duration: 26s;
+      animation-delay: 1s;
+      opacity: 0.20;
+    }
+
+    @keyframes orbMove {
+      0% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(70px, -50px) scale(1.12); }
+      66% { transform: translate(-40px, 40px) scale(0.88); }
+      100% { transform: translate(50px, -25px) scale(1.06); }
+    }
+
+    /* ===== FLOATING DECORATIONS — PINK ===== */
+    .floating-decor {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .floating-decor i {
+      position: absolute;
+      color: rgba(255, 160, 200, 0.25);
+      animation: floatAround 20s infinite linear;
+      font-size: 2.6rem;
+    }
+
+    .floating-decor i:nth-child(1) { top: 4%; left: 2%; animation-duration: 22s; font-size: 3rem; }
+    .floating-decor i:nth-child(2) { top: 78%; left: 92%; animation-duration: 26s; font-size: 3.4rem; }
+    .floating-decor i:nth-child(3) { top: 42%; left: 96%; animation-duration: 18s; font-size: 2rem; }
+    .floating-decor i:nth-child(4) { top: 88%; left: 4%; animation-duration: 24s; font-size: 2.8rem; }
+    .floating-decor i:nth-child(5) { top: 12%; left: 48%; animation-duration: 21s; font-size: 3.6rem; opacity: 0.12; }
+    .floating-decor i:nth-child(6) { top: 58%; left: 8%; animation-duration: 28s; font-size: 2.2rem; }
+    .floating-decor i:nth-child(7) { top: 30%; left: 80%; animation-duration: 19s; font-size: 2rem; opacity: 0.15; }
+    .floating-decor i:nth-child(8) { top: 70%; left: 60%; animation-duration: 23s; font-size: 2.8rem; opacity: 0.12; }
+    .floating-decor i:nth-child(9) { top: 50%; left: 30%; animation-duration: 25s; font-size: 2.4rem; opacity: 0.10; }
+    .floating-decor i:nth-child(10) { top: 20%; left: 70%; animation-duration: 20s; font-size: 2rem; opacity: 0.15; }
+
+    @keyframes floatAround {
+      0% { transform: translate(0, 0) rotate(0deg) scale(0.7); opacity: 0.12; }
+      25% { transform: translate(25px, -35px) rotate(18deg) scale(1.1); opacity: 0.28; }
+      50% { transform: translate(-20px, -70px) rotate(-12deg) scale(0.85); opacity: 0.18; }
+      75% { transform: translate(35px, -25px) rotate(22deg) scale(1.2); opacity: 0.32; }
+      100% { transform: translate(-15px, 5px) rotate(0deg) scale(0.7); opacity: 0.12; }
+    }
+
+    /* ===== CONTENT ===== */
+    .content {
+      position: relative;
+      z-index: 10;
+      color: #fff5f9;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    /* ===== HEADER — PINK ===== */
+    .greeting {
+      font-size: 3.2rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.2rem;
+    }
+
+    .greeting .name {
+      background: linear-gradient(135deg, #ffb3d1, #ff4d88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-size: 4.4rem;
+      letter-spacing: 4px;
+      animation: shimmerName 3.5s infinite alternate;
+      filter: drop-shadow(0 0 16px #ff4d8855);
+    }
+
+    @keyframes shimmerName {
+      0% { filter: drop-shadow(0 0 8px #ff80aa); }
+      100% { filter: drop-shadow(0 0 40px #ff4d88); }
+    }
+
+    .subhead {
+      font-size: 1.4rem;
+      margin: 0.2rem 0 1.8rem;
+      opacity: 0.92;
+      font-weight: 300;
+      border-left: 6px solid #ff80aa;
+      padding-left: 1.4rem;
+      letter-spacing: 0.4px;
+      color: #ffd9e6;
+    }
+
+    .subhead i {
+      margin-right: 0.7rem;
+      color: #ff99bb;
+    }
+
+    /* ===== CARDS — PINK ACCENTS ===== */
+    .section-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      margin: 2.4rem 0 2.2rem;
+    }
+
+    .card {
+      background: rgba(40, 15, 30, 0.50);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 2.8rem;
+      padding: 2.2rem 2.4rem;
+      border: 1px solid rgba(255, 150, 200, 0.20);
+      box-shadow: 0 14px 36px rgba(180, 40, 100, 0.20);
+      transition: 0.4s ease;
+      animation: cardPop 0.9s ease forwards;
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .card:nth-child(1) { animation-delay: 0.08s; }
+    .card:nth-child(2) { animation-delay: 0.20s; }
+    .card:nth-child(3) { animation-delay: 0.32s; }
+    .card:nth-child(4) { animation-delay: 0.44s; }
+    .card:nth-child(5) { animation-delay: 0.56s; }
+    .card:nth-child(6) { animation-delay: 0.68s; }
+
+    @keyframes cardPop {
+      0% { opacity: 0; transform: translateY(28px) scale(0.95); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .card:hover {
+      background: rgba(60, 25, 45, 0.60);
+      border-color: rgba(255, 130, 180, 0.45);
+      box-shadow: 0 22px 48px rgba(200, 60, 130, 0.25);
+      transform: scale(1.012) translateY(-5px);
+    }
+
+    .card-title {
+      font-size: 2.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.2rem;
+      color: #ffd9e6;
+      letter-spacing: -0.3px;
+    }
+
+    .card-title i {
+      color: #ff6b9d;
+      font-size: 2.4rem;
+      filter: drop-shadow(0 0 12px #ff4d8855);
+    }
+
+    .card p {
+      font-size: 1.2rem;
+      line-height: 1.75;
+      margin-bottom: 0.9rem;
+      font-weight: 300;
+      color: #f4e0e8;
+    }
+
+    .card strong {
+      color: #ff8cb5;
+      font-weight: 600;
+    }
+
+    /* ===== POEM BOXES — PINK ===== */
+    .poem-box {
+      background: rgba(255, 180, 210, 0.08);
+      border-radius: 2.2rem;
+      padding: 1.5rem 2rem;
+      margin: 0.9rem 0 0.5rem;
+      border-left: 6px solid #ff80aa;
+      backdrop-filter: blur(4px);
+      transition: 0.2s;
+      font-style: italic;
+      line-height: 2;
+    }
+
+    .poem-box:hover {
+      background: rgba(255, 180, 210, 0.15);
+    }
+
+    .poem-box .poem-line {
+      display: block;
+      font-size: 1.15rem;
+      color: #f5e0ea;
+    }
+
+    .poem-box .poem-title {
+      font-style: normal;
+      font-weight: 400;
+      color: #e6b8cc;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== VERSE BOXES — PINK ===== */
+    .verse-box {
+      background: rgba(255, 180, 210, 0.08);
+      border-radius: 2.2rem;
+      padding: 1.3rem 2rem;
+      margin: 0.9rem 0 0.5rem;
+      border-left: 6px solid #ff6b9d;
+      backdrop-filter: blur(4px);
+      transition: 0.2s;
+    }
+
+    .verse-box:hover {
+      background: rgba(255, 180, 210, 0.15);
+    }
+
+    .verse-box i {
+      color: #ff80aa;
+      margin-right: 0.7rem;
+    }
+
+    .verse-box .scripture {
+      font-size: 1.38rem;
+      font-style: italic;
+      font-weight: 400;
+      color: #ffebf0;
+      text-shadow: 0 0 16px rgba(255, 100, 150, 0.15);
+    }
+
+    .verse-box .ref {
+      display: block;
+      margin-top: 0.3rem;
+      font-weight: 300;
+      color: #e6b8cc;
+      font-size: 1rem;
+      letter-spacing: 0.6px;
+    }
+
+    /* ===== COMPLIMENT GRID — PINK ===== */
+    .compliment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.8rem 1.2rem;
+      margin: 1rem 0 0.4rem;
+    }
+
+    .compliment-grid .comp-item {
+      background: rgba(255, 180, 210, 0.06);
+      padding: 0.6rem 1rem;
+      border-radius: 60px;
+      font-size: 1.05rem;
+      border: 1px solid rgba(255, 150, 200, 0.10);
+      backdrop-filter: blur(2px);
+      transition: 0.2s;
+      text-align: center;
+      color: #f5e0ea;
+    }
+
+    .compliment-grid .comp-item:hover {
+      background: rgba(255, 180, 210, 0.14);
+      border-color: rgba(255, 130, 180, 0.25);
+      transform: scale(1.03);
+    }
+
+    .compliment-grid .comp-item i {
+      margin-right: 8px;
+      color: #ff80aa;
+    }
+
+    /* ===== PILLAR LIST — PINK ===== */
+    .pillar-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.4rem;
+      margin: 1.2rem 0 0.6rem;
+    }
+
+    .pillar-list span {
+      background: rgba(255, 180, 210, 0.07);
+      padding: 0.5rem 1.4rem;
+      border-radius: 60px;
+      font-size: 1.05rem;
+      border: 1px solid rgba(255, 150, 200, 0.10);
+      backdrop-filter: blur(2px);
+      transition: 0.2s;
+      color: #f5e0ea;
+    }
+
+    .pillar-list span:hover {
+      background: rgba(255, 180, 210, 0.15);
+      border-color: rgba(255, 130, 180, 0.25);
+    }
+
+    .pillar-list i {
+      margin-right: 8px;
+      color: #ff80aa;
+    }
+
+    /* ===== IDENTITY GRID — PINK ===== */
+    .identity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1.2rem;
+      margin: 0.8rem 0 0.4rem;
+      padding-left: 0.2rem;
+    }
+
+    .identity-grid span {
+      font-size: 1.08rem;
+      padding: 0.2rem 0;
+      border-bottom: 1px solid rgba(255, 150, 200, 0.08);
+      color: #f5e0ea;
+    }
+
+    .identity-grid i {
+      color: #ff80aa;
+      margin-right: 10px;
+      width: 1.4rem;
+    }
+
+    /* ===== BLESSING BAR — PINK ===== */
+    .blessing-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem 1.2rem;
+      flex-wrap: wrap;
+      background: rgba(255, 180, 210, 0.05);
+      border-radius: 80px;
+      padding: 0.9rem 2.2rem;
+      margin: 1.6rem 0 0.4rem;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 150, 200, 0.08);
+    }
+
+    .blessing-line i {
+      color: #ff80aa;
+      font-size: 1.5rem;
+    }
+
+    .blessing-line .bless-text {
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      font-size: 1.15rem;
+      color: #f5e0ea;
+    }
+
+    /* ===== SIGNATURE — PINK ===== */
+    .signature {
+      margin-top: 2.8rem;
+      text-align: right;
+      font-size: 1.3rem;
+      font-weight: 300;
+      border-top: 1px solid rgba(255, 150, 200, 0.15);
+      padding-top: 1.6rem;
+      color: #e6b8cc;
+      letter-spacing: 0.5px;
+    }
+
+    .signature i {
+      color: #ff6b9d;
+      margin: 0 5px;
+    }
+
+    .signature .name-glow {
+      background: linear-gradient(135deg, #ffb3d1, #ff4d88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 500;
+    }
+
+    .signature .verse-foot {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #d9aabc;
+      margin-top: 0.3rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .love-card { padding: 1.8rem 1.2rem; border-radius: 3rem; }
+      .greeting { font-size: 2.4rem; }
+      .greeting .name { font-size: 3.2rem; }
+      .subhead { font-size: 1.15rem; padding-left: 1rem; }
+      .card { padding: 1.6rem; border-radius: 2rem; }
+      .card-title { font-size: 1.7rem; }
+      .verse-box .scripture { font-size: 1.15rem; }
+      .identity-grid { grid-template-columns: 1fr; }
+      .pillar-list span { font-size: 0.95rem; padding: 0.3rem 1rem; }
+      .compliment-grid { grid-template-columns: 1fr 1fr; }
+      .poem-box .poem-line { font-size: 1rem; }
+    }
+
+    @media (max-width: 450px) {
+      .greeting .name { font-size: 2.6rem; }
+      .card-title { font-size: 1.4rem; gap: 0.4rem; }
+      .card p { font-size: 1.05rem; }
+      .verse-box { padding: 1rem 1.2rem; }
+      .compliment-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="love-card">
+    <!-- ===== BACKGROUND ORBS ===== -->
+    <div class="bg-canvas">
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+    </div>
+
+    <!-- ===== FLOATING ICONS ===== -->
+    <div class="floating-decor">
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-star"></i>
+    </div>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="content">
+      <!-- HEADER -->
+      <div class="greeting">
+        <span>🌷 for</span>
+        <span class="name">Bono</span>
+        <span style="font-size:2.4rem; margin-left: 0.2rem;">✨</span>
+      </div>
+      <div class="subhead">
+        <i class="fas fa-feather-alt"></i> you are rare, radiant & deeply loved — more than you know.
+      </div>
+
+      <!-- ===== CARDS ===== -->
+      <div class="section-grid">
+        <!-- CARD 1: AMAZING & UNIQUE + POEMS -->
+        <div class="card">
+          <div class="card-title">
+            <i class="fas fa-sparkles"></i> your uniqueness is your superpower
+          </div>
+          <p>
+            <strong>Bono,</strong> there is no one like you — not in the way you laugh, 
+            the way you care, or the way you light up a room. Your heart is pure gold, 
+            and your spirit is unbreakable. You are <strong>fearfully and wonderfully made</strong>, 
+            and every part of your story has shaped a masterpiece.
+          </p>
+          <p>
+            <i class="fas fa-heart" style="color: #ff6b9d; margin-right: 8px;"></i> 
+            You are not just "enough" — you are <strong>extraordinary</strong>. 
+            Your kindness, your wisdom, your resilience — they are gifts to this world.
+          </p>
+
+          <!-- POEM 1 -->
+          <div class="poem-box">
+            <span class="poem-line">🌸 A rose in a garden of thorns,</span>
+            <span class="poem-line">You bloom with grace, you were born to adorn.</span>
+            <span class="poem-line">Your smile is a sun that chases the rain,</span>
+            <span class="poem-line">Your heart is a shelter from sorrow and pain.</span>
+            <span class="poem-title">— for Bono, the rare one</span>
+          </div>
+
+          <!-- POEM 2 -->
+          <div class="poem-box" style="border-left-color: #ff99bb;">
+            <span class="poem-line">✨ You are the star that refuses to fade,</span>
+            <span class="poem-line">The light in the dark, the truth in the shade.</span>
+            <span class="poem-line">Your spirit is fearless, your soul is so deep,</span>
+            <span class="poem-line">A treasure so precious, a promise to keep.</span>
+            <span class="poem-title">— Bono, you shine</span>
+          </div>
+
+          <div class="pillar-list">
+            <span><i class="fas fa-gem"></i> rare</span>
+            <span><i class="fas fa-fire"></i> brave</span>
+            <span><i class="fas fa-sun"></i> radiant</span>
+            <span><i class="fas fa-feather"></i> gentle</span>
+            <span><i class="fas fa-crown"></i> royal</span>
+            <span><i class="fas fa-dove"></i> peaceful</span>
+            <span><i class="fas fa-star"></i> chosen</span>
+          </div>
+        </div>
+
+        <!-- CARD 2: FRIENDS + BETRAYAL + HEALING + BIBLE + POEMS -->
+        <div class="card">
+          <div class="card-title">
+            <i class="fas fa-hands-holding-heart"></i> healing after the hurt
+          </div>
+          <p>
+            <i class="fas fa-user-friends" style="color: #ff80aa;"></i> 
+            <strong>Bono,</strong> I know the sting of betrayal from people you trusted. 
+            It's heavy, and it's real. But their actions do not define your worth, 
+            nor do they change the beauty of your soul.
+          </p>
+          <div class="friend-motivation">
+            <p>
+              <span class="highlight" style="background: rgba(255, 130, 180, 0.12); padding: 0.2rem 1.2rem; border-radius: 60px; display: inline-block;"><i class="fas fa-shield-alt" style="color: #ff80aa;"></i> you are still standing</span> — 
+              and that alone shows your resilience. True friends are not the ones who 
+              leave scars; they are the ones who help you heal. And God sees every tear, 
+              every silent prayer.
+            </p>
+            <p style="margin-top: 0.9rem;">
+              <i class="fas fa-leaf" style="color: #ff99bb;"></i> 
+              <strong>Forgiveness is not weakness</strong> — it's freedom. But healing 
+              takes time, and it's okay to grieve. You are not alone.
+            </p>
+          </div>
+
+          <!-- POEM 3: healing -->
+          <div class="poem-box" style="border-left-color: #ff99bb;">
+            <span class="poem-line">🌿 The wound is deep, but the Healer is near,</span>
+            <span class="poem-line">He catches each tear, He casts out all fear.</span>
+            <span class="poem-line">The friends who betrayed, they don't know your worth,</span>
+            <span class="poem-line">But you are a gem, a treasure on earth.</span>
+            <span class="poem-title">— Bono, you are being restored</span>
+          </div>
+
+          <!-- BIBLE VERSES -->
+          <div class="verse-box">
+            <i class="fas fa-bible"></i>
+            <span class="scripture">"The Lord is near to the brokenhearted and saves the crushed in spirit."</span>
+            <span class="ref">— Psalm 34:18</span>
+          </div>
+          <div class="verse-box" style="border-left-color: #ff99bb; margin-top: 0.7rem;">
+            <i class="fas fa-dove"></i>
+            <span class="scripture">"A friend loves at all times, and a brother is born for adversity."</span>
+            <span class="ref">— Proverbs 17:17</span>
+          </div>
+          <div class="verse-box" style="border-left-color: #ff80aa; margin-top: 0.7rem;">
+            <i class="fas fa-crown"></i>
+            <span class="scripture">"I have called you by name, you are mine. When you pass through the waters, I will be with you."</span>
+            <span class="ref">— Isaiah 43:1-2</span>
+          </div>
+          <div class="verse-box" style="border-left-color: #ff99bb; margin-top: 0.7rem;">
+            <i class="fas fa-tree"></i>
+            <span class="scripture">"Blessed is the one who trusts in the Lord, whose confidence is in Him. They will be like a tree planted by the water."</span>
+            <span class="ref">— Jeremiah 17:7-8</span>
+          </div>
+          <div class="verse-box" style="border-left-color: #ff80aa; margin-top: 0.7rem;">
+            <i class="fas fa-praying-hands"></i>
+            <span class="scripture">"Cast all your anxiety on Him because He cares for you."</span>
+            <span class="ref">— 1 Peter 5:7</span>
+          </div>
+
+          <p style="margin-top: 1.6rem; font-size: 1.15rem;">
+            <i class="fas fa-fire" style="color: #ff80aa;"></i> 
+            <strong>Bono,</strong> your future is brighter than your past. God is 
+            rebuilding your circle with people who will cherish you, not use you. 
+            Keep your heart soft, but your boundaries strong. You are deeply loved.
+          </p>
+        </div>
+
+        <!-- CARD 3: IDENTITY & COURAGE + POEMS -->
+        <div class="card">
+          <div class="card-title">
+            <i class="fas fa-angel"></i> your identity is unshakable
+          </div>
+          <p>
+            <strong>You are not what happened to you.</strong> You are what God says about you: 
+            chosen, beloved, and victorious. The enemy tries to make you forget, 
+            but I'm here to remind you — <strong>Bono,</strong> you are a daughter of the King.
+          </p>
+
+          <!-- POEM 4 -->
+          <div class="poem-box" style="border-left-color: #ff99bb;">
+            <span class="poem-line">👑 You are royalty, born of the King,</span>
+            <span class="poem-line">Your worth is eternal, let your heart sing.</span>
+            <span class="poem-line">No weapon against you can ever prevail,</span>
+            <span class="poem-line">His love is your armor, His truth is your tale.</span>
+            <span class="poem-title">— Bono, daughter of the King</span>
+          </div>
+
+          <p>
+            <i class="fas fa-cross" style="color: #ff80aa;"></i> 
+            Let these truths sink deep into your heart:
+          </p>
+          <div class="identity-grid">
+            <span><i class="fas fa-check-circle"></i> You are <strong>forgiven</strong> and made new.</span>
+            <span><i class="fas fa-check-circle"></i> You are <strong>not alone</strong> — He walks with you.</span>
+            <span><i class="fas fa-check-circle"></i> Your future is <strong>full of hope</strong> (Jeremiah 29:11).</span>
+            <span><i class="fas fa-check-circle"></i> You are <strong>more than a conqueror</strong> (Romans 8:37).</span>
+            <span><i class="fas fa-check-circle"></i> He <strong>delights</strong> in you (Zephaniah 3:17).</span>
+            <span><i class="fas fa-check-circle"></i> You are <strong>fearfully made</strong> (Psalm 139:14).</span>
+          </div>
+          <div class="verse-box" style="border-left-color: #ff99bb; margin-top: 1rem;">
+            <i class="fas fa-pray"></i>
+            <span class="scripture">"But those who hope in the Lord will renew their strength. They will soar on wings like eagles."</span>
+            <span class="ref">— Isaiah 40:31</span>
+          </div>
+          <div class="verse-box" style="border-left-color: #ff80aa; margin-top: 0.7rem;">
+            <i class="fas fa-shield-halved"></i>
+            <span class="scripture">"No weapon forged against you will prevail."</span>
+            <span class="ref">— Isaiah 54:17</span>
+          </div>
+        </div>
+
+        <!-- CARD 4: COMPLIMENTS GALORE -->
+        <div class="card">
+          <div class="card-title">
+            <i class="fas fa-heart-circle-check"></i> a thousand compliments for you
+          </div>
+          <p>
+            <strong>Bono,</strong> here are just a few of the countless beautiful things about you:
+          </p>
+          <div class="compliment-grid">
+            <div class="comp-item"><i class="fas fa-smile"></i> your smile is sunshine</div>
+            <div class="comp-item"><i class="fas fa-eye"></i> your eyes hold galaxies</div>
+            <div class="comp-item"><i class="fas fa-heart"></i> your heart is pure gold</div>
+            <div class="comp-item"><i class="fas fa-brain"></i> your mind is brilliant</div>
+            <div class="comp-item"><i class="fas fa-hands"></i> your kindness is endless</div>
+            <div class="comp-item"><i class="fas fa-feather"></i> your spirit is graceful</div>
+            <div class="comp-item"><i class="fas fa-crown"></i> you are a queen</div>
+            <div class="comp-item"><i class="fas fa-star"></i> you are a star</div>
+            <div class="comp-item"><i class="fas fa-gem"></i> you are priceless</div>
+            <div class="comp-item"><i class="fas fa-fire"></i> you are fierce</div>
+            <div class="comp-item"><i class="fas fa-dove"></i> you are peaceful</div>
+            <div class="comp-item"><i class="fas fa-sun"></i> you are radiant</div>
+            <div class="comp-item"><i class="fas fa-moon"></i> you are mysterious</div>
+            <div class="comp-item"><i class="fas fa-rainbow"></i> you are colorful</div>
+            <div class="comp-item"><i class="fas fa-tree"></i> you are rooted</div>
+          </div>
+
+          <!-- POEM 5 -->
+          <div class="poem-box" style="border-left-color: #ff80aa; margin-top: 1rem;">
+            <span class="poem-line">🌟 A thousand compliments could never explain,</span>
+            <span class="poem-line">The depth of your beauty, the joy in your name.</span>
+            <span class="poem-line">Bono, you're magic, you're grace, you're art,</span>
+            <span class="poem-line">You're a masterpiece straight from the heart.</span>
+            <span class="poem-title">— endlessly in awe of you</span>
+          </div>
+        </div>
+
+        <!-- CARD 5: MORE POEMS & ENCOURAGEMENT -->
+        <div class="card">
+          <div class="card-title">
+            <i class="fas fa-feather-pointed"></i> poems for your soul
+          </div>
+
+          <!-- POEM 6 -->
+          <div class="poem-box" style="border-left-color: #ff99bb;">
+            <span class="poem-line">🌊 Like the ocean, your soul is deep,</span>
+            <span class="poem-line">Like the sky, your dreams are steep.</span>
+            <span class="poem-line">You ride the waves, you touch the stars,</span>
+            <span class="poem-line">You've come so far, you've healed your scars.</span>
+            <span class="poem-title">— Bono, the fearless</span>
+          </div>
+
+          <!-- POEM 7 -->
+          <div class="poem-box" style="border-left-color: #ff80aa;">
+            <span class="poem-line">🌺 In a world that tries to make you small,</span>
+            <span class="poem-line">You stand tall, you give your all.</span>
+            <span class="poem-line">Your voice is a song, your life is a poem,</span>
+            <span class="poem-line">You make every place feel like home.</span>
+            <span class="poem-title">— Bono, the radiant one</span>
+          </div>
+
+          <!-- POEM 8 -->
+          <div class="poem-box" style="border-left-color: #ff99bb;">
+            <span class="poem-line">🌿 When the world feels cold and gray,</span>
+            <span class="poem-line">Remember you are the light of the day.</span>
+            <span class="poem-line">Your heart is a garden, your soul is a spring,</span>
+            <span class="poem-line">You are a beautiful, powerful thing.</span>
+            <span class="poem-title">— Bono, you are enough</span>
+          </div>
+
+          <p style="margin-top: 1rem;">
+            <i class="fas fa-quote-left" style="color: #ff80aa;"></i> 
+            <strong>Bono,</strong> you are a living poem, a masterpiece in motion. 
+            Keep writing your story with courage and grace.
+          </p>
+        </div>
+
+        <!-- CARD 6: PRAYER + FINAL ENCOURAGEMENT + POEMS -->
+        <div class="card">
+          <div class="card-title">
+            <i class="fas fa-hands-praying"></i> a prayer & promise for you
+          </div>
+          <p>
+            <i class="fas fa-candle" style="color: #ff99bb;"></i> 
+            May you feel God's presence like a warm embrace. May He heal every wound, 
+            restore every broken place, and fill you with a peace that surpasses understanding.
+          </p>
+          <p>
+            <i class="fas fa-rainbow" style="color: #ff80aa;"></i> 
+            May you find friends who mirror His love — loyal, kind, and true. And may you 
+            always remember that <strong>you are never forgotten, never forsaken.</strong>
+          </p>
+
+          <!-- POEM 9 -->
+          <div class="poem-box" style="border-left-color: #ff99bb;">
+            <span class="poem-line">🙏 May His peace wrap around you tight,</span>
+            <span class="poem-line">May His love be your guiding light.</span>
+            <span class="poem-line">May you rise each day with strength anew,</span>
+            <span class="poem-line">Knowing He's always walking with you.</span>
+            <span class="poem-title">— a prayer for Bono</span>
+          </div>
+
+          <div class="verse-box" style="border-left-color: #ff99bb;">
+            <i class="fas fa-book-open"></i>
+            <span class="scripture">"The Lord bless you and keep you; the Lord make His face shine on you and be gracious to you."</span>
+            <span class="ref">— Numbers 6:24-25</span>
+          </div>
+          <div class="verse-box" style="border-left-color: #ff80aa; margin-top: 0.7rem;">
+            <i class="fas fa-heart-circle-plus"></i>
+            <span class="scripture">"And we know that in all things God works for the good of those who love Him, who have been called according to His purpose."</span>
+            <span class="ref">— Romans 8:28</span>
+          </div>
+
+          <!-- POEM 10 -->
+          <div class="poem-box" style="border-left-color: #ff80aa; margin-top: 1rem;">
+            <span class="poem-line">💖 Bono, you are loved beyond measure,</span>
+            <span class="poem-line">You are a gift, a celestial treasure.</span>
+            <span class="poem-line">Hold on to hope, hold on to grace,</span>
+            <span class="poem-line">You are held in a loving embrace.</span>
+            <span class="poem-title">— forever for you</span>
+          </div>
+
+          <p style="margin-top: 1.2rem; font-size: 1.15rem;">
+            <i class="fas fa-feather" style="color: #ff80aa;"></i> 
+            <strong>Bono,</strong> you are a treasure. Keep shining. The world needs your light.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===== BLESSING BAR ===== -->
+      <div class="blessing-line">
+        <i class="fas fa-star"></i>
+        <span class="bless-text">you are never forgotten, never forsaken</span>
+        <i class="fas fa-star"></i>
+        <span style="font-weight: 300; opacity: 0.7; font-size: 1rem; color: #d9aabc;">&nbsp;— always held</span>
+      </div>
+
+      <!-- ===== SIGNATURE ===== -->
+      <div class="signature">
+        <i class="fas fa-feather"></i> with endless love & prayer — 
+        <span class="name-glow">always for Bono</span> <i class="fas fa-heart" style="color: #ff4d88;"></i>
+        <div class="verse-foot">
+          <i class="fas fa-arrow-right"></i> Psalm 147:3 · "He heals the brokenhearted and binds up their wounds."
+        </div>
+        <div class="verse-foot" style="margin-top: 0.1rem;">
+          <i class="fas fa-arrow-right"></i> Jeremiah 29:11 · "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future."
+        </div>
+        <div class="verse-foot" style="margin-top: 0.1rem;">
+          <i class="fas fa-arrow-right"></i> Zephaniah 3:17 · "He will rejoice over you with singing."
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
